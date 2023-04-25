@@ -1,23 +1,33 @@
 
+import { useState } from "react";
+
 function Meist() {
-    return ( <div>
+    const [kontakt, n2itaKontakt] = useState("");
+   
+   return ( <div>
         <div>
             <h1>See on meist leht, nähtav localhost:3000/meist aadressil</h1></div>
         <div>
             <h2><p align="center" >Meie töötajad</p></h2></div>
         <br/>
-        <div><mark>Porsas Kummik</mark></div>
-        <div>+37233</div>
+        <div>Porsas Kummik</div>
+        
         <div>Porilompide juhataja</div>
-        <br/>
+        <button onClick={() => n2itaKontakt("+37233")}>Võta ühendust</button>
+        <br/> <br/>
         <div><mark>Lammas Sussid</mark></div>
-        <div>+37244</div>
         <div>Talumaja direktor</div>
-        <br/>
+        <button onClick={() => n2itaKontakt("+37244")}>Võta ühendust</button>
+        <br/><br />
         <div>Koer Saabas</div>
-        <div>+37255</div>
         <div>Liivakasti spetsialist</div>
-    </div> );
+        <button onClick={() => n2itaKontakt("+37255")}>Võta ühendust</button>
+        <br/><br />
+        <div>Poni Kauboi</div>
+        <div>Kauboi vanemspetsialist</div>
+        <button onClick={() => n2itaKontakt("+3728899")}>Võta ühendust</button>
+        <br/><br />
+{ kontakt !== "" && <div>Tema kontakt: {kontakt}</div>}
+    </div>);
 }
-
 export default Meist;

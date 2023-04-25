@@ -1,20 +1,25 @@
+import { useState } from "react";
 
 function Kontakt() {
+const [n2itaTelKummiku, muudaN2itaTelKummiku] = useState(false);
+const [n2itaTelSussi, muudaN2itaTelSussi] = useState(false);
+const [n2itaTelSaapa, muudaN2itaTelSaapa] = useState(false);
+
     return ( <div>
         <div><strong> See on kontaktide leht, nähtav localhost:3000/kontakt aadressil</strong></div>
         <div><p align="center" > <b>Helista või kirjuta meile:</b></p></div>
         <br/>
-        <div><p align="center" >Kummiku Maja</p></div>
-        <div><p align="center" >Eesti</p></div>
-        <div><p align="center" >+123456</p></div>
+        <div onClick={() => muudaN2itaTelKummiku(!n2itaTelKummiku)}>Kummiku Maja</div>
+        <div>Eesti</div>
+        {n2itaTelKummiku && <div>+22334455</div> }
         <br/>
-        <div>Sussi Maja</div>
+        <div onClick={() => muudaN2itaTelSussi(!n2itaTelSussi)}>Sussi Maja</div>
         <div>Läti</div>
-        <div>+1234567</div>
+        {n2itaTelSussi && <div>+1234567</div> }
         <br/>
-        <div> Saapa Maja</div>
+        <div onClick={() => muudaN2itaTelSaapa(!n2itaTelSaapa)}> Saapa Maja</div>
         <div>Leedu</div>
-        <div>+12345678</div>
+        {n2itaTelSaapa && <div>+88997700</div> }
     </div> );
 }
 
